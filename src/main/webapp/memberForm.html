@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 창</title>
+<script type="text/javascript">
+function fn_sendMember(){
+   let frmMember=document.frmMember;
+   let userId=frmMember.userId.value;
+   let userPass=frmMember.userPass.value;
+   let userName=frmMember.userName.value;
+   let userEmail=frmMember.userEmail.value;
+   if(userId.length==0 ||userId==""){
+      alert("아이디는 필수입니다.");
+   }else if(userPass.length==0 ||userPass==""){
+      alert("비밀번호는 필수입니다.");
+   }
+   else if(userName.length==0 ||userName==""){
+      alert("이름은 필수입니다.");
+   }else if(userEmail.length==0 ||userEmail==""){
+      alert("이메일은 필수입니다.");
+   }else{
+      frmMember.method="post";
+      frmMember.action="member3";
+      frmMember.submit();
+   } 
+}
+</script>
+</head>
+<body>  
+<form name="frmMember">
+  <table>
+	   <th>회원 가입창</th>
+	  <tr>
+		<td>아이디</td>
+		<td><input type="text" name="userId"></td>
+	  </tr>
+	  <tr>
+		<td>비밀번호</td>
+		<td><input type="password" name="userPass"></td>
+	  </tr>
+	  <tr>
+		<td>이름</td>
+		<td><input type="text" name="userName"></td>
+	  </tr>
+	    <tr>
+		<td>이메일</td>
+		<td><input type="text" name="userEmail"></td>
+	  </tr>
+  </table>
+   <input type="button" value="가입하기" onclick="fn_sendMember()">
+   <input type="reset" value="다시입력">
+   <input  type="hidden" name="command" value="addMember" />	
+  </form>
+</body>
+</html>
