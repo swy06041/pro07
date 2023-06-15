@@ -48,6 +48,7 @@ public class MemberServlet extends HttpServlet {
 
 			dao.delMember(userId);
 
+			
 		}
 
 		List list = dao.listMembers();
